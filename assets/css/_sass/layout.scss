@@ -1,0 +1,133 @@
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 1em;
+
+  .catalogue {
+    // background-color: #f0f0f0;
+    padding: 1em;
+  }
+
+  .pagination {
+    // background-color: #e0e0e0;
+    padding: 1em;
+    text-align: center;
+  }
+}
+// $body-bg-dark: #ff0000; 
+nav {
+  
+  display: grid;
+  align-items: center;
+  background-color: $body-bg; 
+  @media (prefers-color-scheme: dark) {
+    background-color: $body-bg-dark;
+  }
+  padding: 1em;
+  margin-top: 50px;
+}
+
+.nav {
+  &-header {
+    display: grid;
+
+  }
+  &-hitem {
+    justify-self: center;
+  }
+
+  &-title-link {
+    text-decoration: none;
+    // border: 1px solid #0000ff;
+    text-transform: uppercase;
+  }
+  &-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: $default-color; 
+    @media (prefers-color-scheme: dark) {
+      color: $default-color-dark;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: .6;
+    }
+  }
+  &-list {
+    // grid-column: 2/3;
+    display: grid;
+    grid-template-columns: auto;
+grid-auto-flow: column;
+    list-style: none;
+    gap: 1em;
+    // justify-self: center;         
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  &-item {
+    text-decoration: none;
+    padding: 14px 20px;
+    text-align:center;
+    white-space: nowrap;
+  }
+
+  &-item a {
+    text-decoration: none;
+
+    color: $default-color; 
+    @media (prefers-color-scheme: dark) {
+      color: $default-color-dark;
+    }
+    font-size: 1em;
+    &:hover {
+      opacity: .6;
+    }
+  }
+  &-logo {
+    max-width: 75px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    &-title-link {
+      margin-bottom: 1em;
+    }
+    &-container {
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto;
+     text-align: center;
+    }
+    &-description {
+      display: none;
+    }
+    &-list {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      justify-self: center;
+      align-items: center;
+      gap: 0.5em;
+      padding: 0;
+      margin: 0;
+    }
+    &-item {
+      text-align: center;
+    }
+  }
+}
+
+
+footer {
+
+background-color: $body-bg; 
+  @media (prefers-color-scheme: dark) {
+    background-color: $body-bg-dark;
+  }
+  padding: 1em;
+  text-align: center;
+}

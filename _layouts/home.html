@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<div class="articles-container">
+    {% for article in site.home %}
+        <article class="article {{ article.alignment }}">
+            <header>
+                <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                <p>Автор: {{ article.author }} | Дата публикации: {{ article.date | date: "%-d %B %Y" }}</p>
+            </header>
+            
+            <figure>
+                <img src="{{ article.image }}" alt="{{ article.title }}">
+                <figcaption>{{ article.caption }}</figcaption>
+            </figure>
+            
+            <section>
+                {{ article.excerpt }}
+            </section>
+            
+            <footer>
+                <p>Категория: <a href="{{ site.baseurl }}/categories/{{ article.categories | first }}">{{ article.categories | first }}</a></p>
+                <p>Теги: {% for tag in article.tags %}<a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</p>
+            </footer>
+        </article>
+    {% endfor %}
+</div>
+
+<style>
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.article {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+}
+.article.left {
+    align-self: flex-start;
+}
+.article.right {
+    align-self: flex-end;
+}
+.article img {
+    max-width: 100%;
+    height: auto;
+}
+</style>
+

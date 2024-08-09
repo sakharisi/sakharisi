@@ -1,0 +1,21 @@
+<article class="article {{ page.alignment }}">
+    <header>
+        <h2>{{ page.title }}</h2>
+        <p>Автор: {{ page.author }} | Дата публикации: {{ page.date | date: "%-d %B %Y" }}</p>
+    </header>
+    
+    <figure>
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+        <figcaption>{{ page.caption }}</figcaption>
+    </figure>
+    
+    <section>
+        {{ content }}
+    </section>
+    
+    <footer>
+        <p>Категория: <a href="#{{ page.categories }}">{{ page.categories }}</a></p>
+        <p>Теги: {% for tag in page.tags %}<a href="#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</p>
+    </footer>
+</article>
+
