@@ -1,8 +1,8 @@
 # Site settings
 title: SAKHARISI
 description: Wine Company
-baseurl:
-url:
+baseurl: ""
+url: "https://sakharisi.ge"
 
 # https://jekyllrb.com/docs/configuration/options/
 timezone: Asia/Tbilisi
