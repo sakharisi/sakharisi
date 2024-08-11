@@ -5,3 +5,4 @@ _site/
 .DS_Store
 .github/
 node_modules/
+Gemfile.lock
